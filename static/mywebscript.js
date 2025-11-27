@@ -1,12 +1,14 @@
-let RunSentimentAnalysis = ()=>{
-    textToAnalyze = document.getElementById("textToAnalyze").value;
+// Emotion Detection Web Application
+console.log("Emotion Detection Web App Loaded");
 
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("system_response").innerHTML = xhttp.responseText;
-        }
-    };
-    xhttp.open("GET", "emotionDetector?textToAnalyze"+"="+textToAnalyze, true);
-    xhttp.send();
+function clearText() {
+    document.getElementById('textToAnalyze').value = '';
+    document.getElementById('result').innerHTML = '';
+}
+
+// Función adicional para mejorar la UX
+function handleKeyPress(event) {
+    if (event.key === 'Enter' && event.ctrlKey) {
+        analyzeEmotion();
+    }
 }
