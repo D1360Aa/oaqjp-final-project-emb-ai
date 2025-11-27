@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 """
 Servidor Flask para la aplicación de detección de emociones
 """
